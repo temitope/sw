@@ -5,9 +5,9 @@
 		<!--script id="facebook-jssdk" async="" src="./static/all.js"></script><script type="text/javascript" src="./static/srz7quf.js"></script-->
 	<style type="text/css">.tk-nimbus-sans-condensed{font-family:"nimbus-sans-condensed",sans-serif;}</style>
 
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- script type="text/javascript">try{Typekit.load();}catch(e){}</script -->
 	<script type="text/javascript" src="./static/jquery-1.7.1.min.js"></script>
-					<script type="text/javascript" src="./static/jquery.inputHintOverlay.js"></script>				<script type="text/javascript" src="./static/jquery.validate.min.js"></script>				<script type="text/javascript" src="./static/jquery.homepage.js"></script>	<title>A community of people who love their families - Devote.ly</title>
+					<!-- script type="text/javascript" src="./static/jquery.inputHintOverlay.js" --></script>				<script type="text/javascript" src="./static/jquery.validate.min.js"></script>				<script type="text/javascript" src="./static/jquery.homepage.js"></script>	<title>A community of people who love their families - Devote.ly</title>
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -81,24 +81,210 @@
 	</a>
 </div>
 <h1>
-Learn a language.
+Your native language:
 </h1>
-<h2>
-English
-<br>
-Español
-<br>
-Français
-<br>
-中文(简体)
-<br>
-中文(繁體)
-</h2>
+<div id="landchoose">
+<h2 class="land">
+English</h2>
+<h2 class="land">
+Español</h2>
+<h2 class="land">
+Français</h2>
+<h2 class="land">
+中文(简体)</h2>
+<h2 class="land">
+中文(繁體)</h2>
+</div>
+<div id="landback">
+	<h6 class="land"><small>back</small></h6>
+	</div>
 <hr>
-<form id="signup_form" method="post" action="http://devote.ly/prelaunch/signup">
+<style type="text/css">
+h2.land:hover, h6.land:hover{
+	background:yellow;
+	color:black;
+	border-radius:5px;
+	cursor:pointer;
+}
+.signup_form, #landback{
+	display:none;
+}
+</style>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$("h2.land").click(function(){
+			//toggle language options
+			$("#landchoose").slideUp();
+			$("#landback").show();
+			
+			//showform
+			$(".signup_form").hide()
+			.eq($("h2.land").index(this)).show();
+			
+			
+			
+		});
+		$("h6.land").click(function(){
+			$(".signup_form").hide();
+			$("#landback").slideUp();
+			$("#landchoose").slideDown();
+			
+		});
+	
+	
+	})
+</script>
+
+<form class="signup_form sf_ch1" method="post" action="http://devote.ly/prelaunch/signup">
+	<table>
+	    <tr>
+	    <td><h2>Teach</h2></td>
+	    <td><h2>Learn</h2></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachEn" value="English"><label for="English">English</label></td>
+	    <td><input type="checkbox" id="LearnEn" value="English"><label for="English">English</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachSp" value="Spanish"><label for="Spanish">Spanish</label></td>
+	    <td><input type="checkbox" id="LearnSp" value="Spanish"><label for="Spanish">Spanish</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachFr" value="French"><label for="French">French</label></td>
+	    <td><input type="checkbox" id="LearnFr" value="French"><label for="French">French</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachCh" value="Chinese"><label for="Chinese">Chinese</label></td>
+	    <td><input type="checkbox" id="LearnCh" value="Chinese"><label for="Chinese">Chinese</label></td>
+	    </tr>
+	    </table>
 	<div class="signup">
-		<label for="email_address">Be the first to get access</label>
-		<div class="inputHintOverlay" style="position:relative" id="wrapEnteryouremailaddressjqiho"><input id="email_address" name="EMAIL" type="text" title="Enter your email address"><label for="email_address" id="Enteryouremailaddressjqiho" class="inputHintOverlay" style="position: absolute; z-index: 20; left: 0px; top: 6px; cursor: text; ">Enter your email address</label></div>
+		<label for="email_address">ENGLISH</label>
+	<input id="email_address" name="EMAIL" type="text" placeholder="Enter your email address">
+		<button>get access first</button>
+	</div>
+</form>
+
+
+<form class="signup_form sf_ch1" method="post" action="http://devote.ly/prelaunch/signup">
+	<table>
+	    <tr>
+	    <td><h2>Enseñar</h2></td>
+	    <td><h2>Aprender</h2></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachEn" value="English"><label for="English">Inglés</label></td>
+	    <td><input type="checkbox" id="LearnEn" value="English"><label for="English">Inglés</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachSp" value="Spanish"><label for="Spanish">Español</label></td>
+	    <td><input type="checkbox" id="LearnSp" value="Spanish"><label for="Spanish">Español</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachFr" value="French"><label for="French">Francés</label></td>
+	    <td><input type="checkbox" id="LearnFr" value="French"><label for="French">Francés</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachCh" value="Chinese"><label for="Chinese">Chino</label></td>
+	    <td><input type="checkbox" id="LearnCh" value="Chinese"><label for="Chinese">Chino</label></td>
+	    </tr>
+	    </table>
+	<div class="signup">
+		<label for="email_address">ESPANOL</label>
+		<input id="email_address" name="EMAIL" type="text" title="Enter your email address">
+		<button>get access first</button>
+	</div>
+</form>
+
+
+<form class="signup_form sf_ch1" method="post" action="http://devote.ly/prelaunch/signup">
+	<table>
+	    <tr>
+	    <td><h2>Enseignez</h2></td>
+	    <td><h2>Apprenez</h2></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachEn" value="English"><label for="English">Anglais</label></td>
+	    <td><input type="checkbox" id="LearnEn" value="English"><label for="English">Anglais</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachSp" value="Spanish"><label for="Spanish">Espagnol</label></td>
+	    <td><input type="checkbox" id="LearnSp" value="Spanish"><label for="Spanish">Espagnol</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachFr" value="French"><label for="French">Français</label></td>
+	    <td><input type="checkbox" id="LearnFr" value="French"><label for="French">Français</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachCh" value="Chinese"><label for="Chinese">Chinois</label></td>
+	    <td><input type="checkbox" id="LearnCh" value="Chinese"><label for="Chinese">Chinois</label></td>
+	    </tr>
+	    </table>
+	<div class="signup">
+		<label for="email_address">FRENCH</label>
+		<input id="email_address" name="EMAIL" type="text" title="Enter your email address">
+		<button>get access first</button>
+	</div>
+</form>
+
+
+<form class="signup_form sf_ch1" method="post" action="http://devote.ly/prelaunch/signup">
+	<table>
+	    <tr>
+	    <td><h2>我想教:</h2></td>
+	    <td><h2>我想学习:</h2></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachEn" value="English"><label for="English">英文</label></td>
+	    <td><input type="checkbox" id="LearnEn" value="English"><label for="English">英文</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachSp" value="Spanish"><label for="Spanish">西班牙文</label></td>
+	    <td><input type="checkbox" id="LearnSp" value="Spanish"><label for="Spanish">西班牙文</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachFr" value="French"><label for="French">法文</label></td>
+	    <td><input type="checkbox" id="LearnFr" value="French"><label for="French">法文</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachCh" value="Chinese"><label for="Chinese">中文</label></td>
+	    <td><input type="checkbox" id="LearnCh" value="Chinese"><label for="Chinese">中文</label></td>
+	    </tr>
+	    </table>
+	<div class="signup">
+		<label for="email_address">Chinese 1</label>
+	<input id="email_address" name="EMAIL" type="text" title="Enter your email address">
+		<button>get access first</button>
+	</div>
+</form>
+
+<form class="signup_form sf_en" id="signup_form" method="post" action="http://devote.ly/prelaunch/signup">
+	<table>
+	    <tr>
+	    <td><h2>我想教:</h2></td>
+	    <td><h2>我想學習:</h2></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachEn" value="English"><label for="English">英文</label></td>
+	    <td><input type="checkbox" id="LearnEn" value="English"><label for="English">英文</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachSp" value="Spanish"><label for="Spanish">西班牙文</label></td>
+	    <td><input type="checkbox" id="LearnSp" value="Spanish"><label for="Spanish">西班牙文</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachFr" value="French"><label for="French">法文</label></td>
+	    <td><input type="checkbox" id="LearnFr" value="French"><label for="French">法文</label></td>
+	    </tr>
+	    <tr>
+	    <td><input type="checkbox" id="TeachCh" value="Chinese"><label for="Chinese">中文</label></td>
+	    <td><input type="checkbox" id="LearnCh" value="Chinese"><label for="Chinese">中文</label></td>
+	    </tr>
+	    </table>
+	<div class="signup">
+		<label for="email_address">Chinese 2</label>
+	<input id="email_address" name="EMAIL" type="text" title="Enter your email address">
 		<button>get access first</button>
 	</div>
 </form>

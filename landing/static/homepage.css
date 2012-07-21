@@ -177,7 +177,7 @@ button[disabled], input[disabled] { cursor: default; }
  * Consistent box sizing and appearance
  */
 
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; vertical-align:middle}
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
@@ -219,8 +219,11 @@ label.error {display: none; color: #DD3C10 !important; margin-top: 3px;}
    Tables
    ========================================================================== */
 
-table { border-collapse: collapse; border-spacing: 0; }
-td { vertical-align: top; }
+table { border-collapse: collapse; border-spacing: 0; 
+        width:100%;
+      }
+td { vertical-align: top;
+  }
 
 
 /* =============================================================================
@@ -316,7 +319,7 @@ td { vertical-align: top; }
   
   div.content {
   	position: relative;
-  	width: 380px;
+  	width: 450px;
   	height: 2430px;
   	background: rgba(0, 0, 0, .75);
   	color: white;
@@ -365,7 +368,7 @@ td { vertical-align: top; }
   	
   }
   
-  .signup input {
+  .signup input['text']  {
   	margin-top: 3px;
   	width: 342px;
   }

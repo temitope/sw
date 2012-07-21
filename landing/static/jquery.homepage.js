@@ -4,10 +4,10 @@ $(document).ready(function() {
 		$url = "/fam.ly";
 	
 	//INPUT HINT
-	$('#signup_form').inputHintOverlay(6,0);
+/*	$('#signup_form').inputHintOverlay(6,0);
 	$('#oops_form').inputHintOverlay(6,0);
 	$('#reset_form').inputHintOverlay(6,0);
-
+*/
 	/*
 	*	LOGIN FORM RELATED FUNCTIONALITY
 	*/
